@@ -1,4 +1,6 @@
-const colors = require('colors');
+const unicode = require('to-unicode');
+
+// This function returns the input in unicode.
 module.exports = (input) => {
-   return input.rainbow.bold;
+   return unicode(input);
 };

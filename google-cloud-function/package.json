@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "artifactregistry-login": "npx google-artifactregistry-auth"
+    "artifactregistry-login": "npx google-artifactregistry-auth .env.yaml"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "escape-html": "^1.0.3",
-    "@example/blogpost-repo": "1.0.0"
+    "@example/blog-repo": "1.1.0"
   }
 }
