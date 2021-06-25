@@ -1,0 +1,25 @@
+steps:
+- name: node
+  entrypoint: node
+  args: ['npmrc-parser.js', '${_PATHTOTOKEN}', '${_PATHTONPMRC}', 'pre']
+- name: node
+  entrypoint: npm
+  args: ['run', 'artifactregistry-login']
+- name: node
+  entrypoint: /bin/bash
+  args: 
+    - -c 
+    - |
+      token=$(node npmrc-parser.js ${_PATHTOTOKEN} ${_PATHTONPMRC} post)
+      echo $token
+      echo $token > _TOKEN
+- name: 'gcr.io/cloud-builders/gcloud'
+  entrypoint: /bin/bash
+  args:
+    - -c
+    - |
+      gcloud functions deploy "${_FUNCTIONNAME}" \
+        --trigger-http \
+        --runtime nodejs12 \
+        --allow-unauthenticated \
+        --set-build-env-vars TOKEN="$(cat _TOKEN)"

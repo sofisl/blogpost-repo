@@ -1,11 +1,11 @@
 {
   "name": "@example/blog-repo",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "description": "An example repository for a private dependency",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "artifactregistry-login": "npx google-artifactregistry-auth"
+    "artifactregistry-login": "npx google-artifactregistry-auth .npmrc"
   },
   "author": "Blogpost authors",
   "license": "ISC",

@@ -1,10 +1,10 @@
-This is an example repository for a private dependency. To use it, simply install using the following:
+This is an example repository for a private dependency.
 
-The function will return any input you give it in rainbow colors:
+The function will return any input you give it in unicode:
 
 ```
-const rainbow = require('@example/blogpost-repo');
-console.log(rainbow("Hello World!"));
+const unicode = require('@example/blog-repo');
+console.log(unicode("Hello World!"));
 ```
 
 Given that this sample is intended to be a private
