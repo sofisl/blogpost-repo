@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "artifactregistry-login": "npx google-artifactregistry-auth .npmrc",
+    "artifactregistry-login": "npx google-artifactregistry-auth .npmrc"
   },
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "ini": "^2.0.0"
+  },
   "dependencies": {
     "@example/blog-repo": "1.5.0",
-    "escape-html": "^1.0.3",
-    "ini": "^2.0.0"
+    "escape-html": "^1.0.3"
   }
 }
