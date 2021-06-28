@@ -6,17 +6,11 @@ steps:
     entrypoint: npm
     args: ['install']
   - name: node
-    entrypoint: node
-    args: ['npmrc-parser.js', '${_PATHTOTOKEN}', '${_PATHTONPMRC}', 'pre']
-  - name: node
-    entrypoint: npm
-    args: ['run', 'artifactregistry-login']
-  - name: node
     entrypoint: /bin/bash
     args: 
       - -c 
       - |
-        token=$(node npmrc-parser.js ${_PATHTOTOKEN} ${_PATHTONPMRC} post)
+        token=$(node npmrc-parser.js ${_PATHTOTOKEN} ${_PATHTONPMRC})
         echo $token
         echo $token > _TOKEN
   - name: gcr.io/cloud-builders/gcloud
