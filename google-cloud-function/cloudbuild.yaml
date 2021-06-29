@@ -23,3 +23,10 @@ steps:
           --runtime nodejs12 \
           --allow-unauthenticated \
           --set-build-env-vars TOKEN="$(cat _TOKEN)"
+  - name: node
+    entrypoint: /bin/bash
+    args: 
+      - -c 
+      - |
+        echo 'HELLO OLD FRIEND'
+        rm _TOKEN
